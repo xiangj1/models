@@ -297,7 +297,7 @@ def run_deep_speech(_):
 
     # If some evaluation threshold is met
     if model_helpers.past_stop_threshold(
-        flags_obj.wer_threshold, eval_results[_WER_KEY]):
+        eval_results[_WER_KEY], flags_obj.wer_threshold):
       break
 
 
