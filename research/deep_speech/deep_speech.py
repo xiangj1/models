@@ -290,7 +290,7 @@ def run_deep_speech(_):
         eval_speech_dataset.entries, input_fn_eval)
 
     # Log the WER and CER results.
-    benchmark_logger.log_evaluation_result(eval_results)
+    # benchmark_logger.log_evaluation_result(eval_results)
     logging.info(
         "Iteration {}: WER = {:.2f}, CER = {:.2f}".format(
             cycle_index + 1, eval_results[_WER_KEY], eval_results[_CER_KEY]))
