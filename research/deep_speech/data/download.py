@@ -149,7 +149,7 @@ def convert_audio_and_split_transcript(input_dir, source_name, target_name,
   csv_file_path = os.path.join(output_dir, output_file)
   df = pandas.DataFrame(
       data=files, columns=["wav_filename", "wav_filesize", "transcript"])
-  df.to_csv(csv_file_path, index=False, sep="\t")
+  df.to_csv(csv_file_path, index=False, sep=",")
   logging.info("Successfully generated csv file {}".format(csv_file_path))
 
 
@@ -192,7 +192,7 @@ def main(_):
   if FLAGS.train_only:
     download_and_process_datasets(
         FLAGS.data_dir,
-        ["train-clean-100", "train-clean-360", "train-other-500"])
+        ["train-clean-100"])
   elif FLAGS.dev_only:
     download_and_process_datasets(FLAGS.data_dir, ["dev-clean", "dev-other"])
   elif FLAGS.test_only:

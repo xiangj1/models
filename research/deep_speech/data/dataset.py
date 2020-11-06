@@ -132,7 +132,7 @@ def _preprocess_data(file_path):
   # Skip the csv header in lines[0].
   lines = lines[1:]
   # The metadata file is tab separated.
-  lines = [line.split("\t", 2) for line in lines]
+  lines = [line.split(",", 2) for line in lines]
   # Sort input data by the length of audio sequence.
   lines.sort(key=lambda item: int(item[1]))
 

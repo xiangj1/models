@@ -327,7 +327,7 @@ def define_deep_speech_flags():
       model_dir="/tmp/deep_speech_model/",
       export_dir="/tmp/deep_speech_saved_model/",
       train_epochs=10,
-      batch_size=128,
+      batch_size=2,
       hooks="")
 
   # Deep speech flags
