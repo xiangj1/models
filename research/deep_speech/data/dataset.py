@@ -28,7 +28,7 @@ from absl import logging
 # pylint: enable=g-bad-import-order
 
 import data.featurizer as featurizer  # pylint: disable=g-bad-import-order
-
+import pandas as pd
 
 class AudioConfig(object):
   """Configs for spectrogram extraction from audio."""
@@ -127,12 +127,16 @@ def _preprocess_data(file_path):
     file_size.
   """
   logging.info("Loading data set {}".format(file_path))
-  with tf.io.gfile.GFile(file_path, "r") as f:
-    lines = f.read().splitlines()
+  # with tf.io.gfile.GFile(file_path, "r") as f:
+  #   lines = f.read().splitlines()
+
+  data = pd.read_csv(file_path)
+  
   # Skip the csv header in lines[0].
-  lines = lines[1:]
+  # lines = lines[1:]
   # The metadata file is tab separated.
-  lines = [line.split(",", 2) for line in lines]
+  # lines = [line.split(",", 2) for line in lines]
+  lines = data.values.tolist()
   # Sort input data by the length of audio sequence.
   lines.sort(key=lambda item: int(item[1]))
 

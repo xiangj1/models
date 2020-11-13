@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Train",
+            "type": "python",
+            "request": "launch",
+            "program": "research/deep_speech/deep_speech.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--train_data_dir=/mnt/c/Users/xiang/Development/E2E/train_keras.csv",
+                "--eval_data_dir=/mnt/c/Users/xiang/Development/E2E/eval_keras.csv",
+                "--num_gpus=-1",
+                "--wer_threshold=0.23",
+                "--seed=1",
+                "--train_epochs=1",
+                "--batch_size=16"
+            ]
+        }
+    ]
+}
